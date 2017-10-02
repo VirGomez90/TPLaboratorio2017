@@ -16,6 +16,7 @@ import javax.swing.border.LineBorder;
 import java.awt.SystemColor;
 import com.toedter.calendar.JCalendar;
 import java.awt.Label;
+import javax.swing.JMenuItem;
 
 
 public class Vista
@@ -57,6 +58,8 @@ public class Vista
 	JButton btnVer;
 	private JPanel panelContratos;
 	private JScrollPane spContratos;
+	private JMenuItem mntmNuevoContrato;
+	private JMenuItem mntmConsultarContrato;
 	/**
 	 * @wbp.nonvisual location=-3,-31
 	 */
@@ -117,6 +120,12 @@ public class Vista
 		
 		mnContratos = new JMenu("Contratos");
 		menuBar.add(mnContratos);
+		
+		mntmNuevoContrato = new JMenuItem("Nuevo Contrato");
+		mnContratos.add(mntmNuevoContrato);
+		
+		mntmConsultarContrato = new JMenuItem("Consultar Contratos");
+		mnContratos.add(mntmConsultarContrato);
 		
 		mnInmobiliariasColegas = new JMenu("Inmobiliarias Colegas");
 		menuBar.add(mnInmobiliariasColegas);
