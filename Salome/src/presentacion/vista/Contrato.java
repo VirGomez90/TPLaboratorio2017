@@ -1,8 +1,5 @@
 package presentacion.vista;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -22,18 +19,29 @@ public class Contrato extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField txtApellido;
-	private JTextField txtNombre;
-	private JTextField txtDNI;
-	private JTextField txtTelefono;
-	private JTextField txtEmail;
+	private JTextField txtApellidoPropietario;
+	private JTextField txtNombrePropietario;
+	private JTextField txtDNIPropietario;
+	private JTextField txtTelefonoPropietario;
+	private JTextField txtEmailPropietario;
 	private JTextField txtMonto;
+	private JTextField txtAlturaPropietario;
+	private JTextField txtLocalidadPropietario;
+	private JTextField txtDniInquilino;
+	private JTextField txtApellidoInquilino;
+	private JTextField txtCalleInquilino;
+	private JTextField txtLocalidadInquilino;
+	private JTextField txtNombreInquilino;
+	private JTextField txtAlturaInquilino;
+	private JTextField txtTelefonoInquilino;
+	private JTextField txtEmailInquilino;
+	private JTextField txtCargarArchivo;
 
 	
 	public Contrato() {
 		setTitle("Contratos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 601, 418);
+		setBounds(100, 100, 601, 698);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -41,99 +49,237 @@ public class Contrato extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0), 2));
-		panel.setBounds(10, 11, 565, 357);
+		panel.setBounds(10, 11, 565, 637);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblDatos = new JLabel("Datos:");
+		JLabel lblDatos = new JLabel("Datos del Propietario:");
 		lblDatos.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblDatos.setBounds(10, 0, 143, 25);
+		lblDatos.setBounds(10, 0, 164, 25);
 		panel.add(lblDatos);
 		
 		JLabel lblApellido = new JLabel("Apellido");
-		lblApellido.setBounds(10, 40, 70, 14);
+		lblApellido.setBounds(10, 68, 64, 14);
 		panel.add(lblApellido);
 		
 		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setBounds(10, 68, 70, 14);
+		lblNombre.setBounds(253, 68, 70, 14);
 		panel.add(lblNombre);
 		
 		JLabel lblDni = new JLabel("DNI");
-		lblDni.setBounds(10, 97, 70, 14);
+		lblDni.setBounds(10, 36, 70, 14);
 		panel.add(lblDni);
 		
 		JLabel lblTelefono = new JLabel("Telefono");
-		lblTelefono.setBounds(10, 128, 70, 14);
+		lblTelefono.setBounds(253, 139, 70, 14);
 		panel.add(lblTelefono);
 		
 		JLabel lblEmail = new JLabel("email");
-		lblEmail.setBounds(10, 153, 70, 14);
+		lblEmail.setBounds(10, 167, 70, 14);
 		panel.add(lblEmail);
 		
 		JLabel lblInmueble = new JLabel("Inmueble");
-		lblInmueble.setBounds(10, 189, 70, 14);
+		lblInmueble.setBounds(10, 452, 70, 14);
 		panel.add(lblInmueble);
 		
 		JLabel lblFechaInicio = new JLabel("Fecha Inicio");
-		lblFechaInicio.setBounds(10, 230, 84, 14);
+		lblFechaInicio.setBounds(10, 494, 84, 14);
 		panel.add(lblFechaInicio);
 		
 		JDateChooser dChFechaInicio = new JDateChooser();
-		dChFechaInicio.setBounds(90, 230, 106, 20);
+		dChFechaInicio.setBounds(77, 488, 97, 20);
 		panel.add(dChFechaInicio);
 		
 		JLabel lblFechaFin = new JLabel("Fecha Fin");
-		lblFechaFin.setBounds(206, 230, 64, 14);
+		lblFechaFin.setBounds(195, 494, 64, 14);
 		panel.add(lblFechaFin);
 		
 		JDateChooser dChFechaFin = new JDateChooser();
-		dChFechaFin.setBounds(264, 230, 106, 20);
+		dChFechaFin.setBounds(262, 488, 97, 20);
 		panel.add(dChFechaFin);
 		
 		JLabel lblMonto = new JLabel("Monto");
-		lblMonto.setBounds(10, 282, 84, 14);
+		lblMonto.setBounds(10, 525, 64, 14);
 		panel.add(lblMonto);
 		
 		JLabel lblCargarArchivo = new JLabel("Cargar archivo");
-		lblCargarArchivo.setBounds(10, 319, 84, 14);
+		lblCargarArchivo.setBounds(10, 571, 84, 14);
 		panel.add(lblCargarArchivo);
 		
-		txtApellido = new JTextField();
-		txtApellido.setBounds(90, 37, 280, 20);
-		panel.add(txtApellido);
-		txtApellido.setColumns(10);
+		txtApellidoPropietario = new JTextField();
+		txtApellidoPropietario.setBounds(77, 65, 137, 20);
+		panel.add(txtApellidoPropietario);
+		txtApellidoPropietario.setColumns(10);
 		
-		txtNombre = new JTextField();
-		txtNombre.setColumns(10);
-		txtNombre.setBounds(90, 65, 280, 20);
-		panel.add(txtNombre);
+		txtNombrePropietario = new JTextField();
+		txtNombrePropietario.setColumns(10);
+		txtNombrePropietario.setBounds(317, 68, 137, 20);
+		panel.add(txtNombrePropietario);
 		
-		txtDNI = new JTextField();
-		txtDNI.setColumns(10);
-		txtDNI.setBounds(90, 94, 280, 20);
-		panel.add(txtDNI);
+		txtDNIPropietario = new JTextField();
+		txtDNIPropietario.setColumns(10);
+		txtDNIPropietario.setBounds(77, 36, 137, 20);
+		panel.add(txtDNIPropietario);
 		
-		txtTelefono = new JTextField();
-		txtTelefono.setColumns(10);
-		txtTelefono.setBounds(90, 125, 280, 20);
-		panel.add(txtTelefono);
+		txtTelefonoPropietario = new JTextField();
+		txtTelefonoPropietario.setColumns(10);
+		txtTelefonoPropietario.setBounds(317, 136, 137, 20);
+		panel.add(txtTelefonoPropietario);
 		
-		txtEmail = new JTextField();
-		txtEmail.setColumns(10);
-		txtEmail.setBounds(90, 150, 280, 20);
-		panel.add(txtEmail);
+		txtEmailPropietario = new JTextField();
+		txtEmailPropietario.setColumns(10);
+		txtEmailPropietario.setBounds(77, 164, 137, 20);
+		panel.add(txtEmailPropietario);
 		
 		JComboBox cmbxInmuebles = new JComboBox();
-		cmbxInmuebles.setBounds(90, 186, 191, 20);
+		cmbxInmuebles.setBounds(77, 449, 191, 20);
 		panel.add(cmbxInmuebles);
 		
 		txtMonto = new JTextField();
 		txtMonto.setColumns(10);
-		txtMonto.setBounds(90, 279, 84, 20);
+		txtMonto.setBounds(77, 522, 84, 20);
 		panel.add(txtMonto);
 		
 		JButton btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(283, 315, 89, 23);
+		btnGuardar.setBounds(466, 603, 89, 23);
 		panel.add(btnGuardar);
+		
+		JButton btnBuscarPropietario = new JButton("...");
+		btnBuscarPropietario.setBounds(250, 32, 41, 23);
+		panel.add(btnBuscarPropietario);
+		
+		JLabel lblCalle = new JLabel("Calle");
+		lblCalle.setBounds(10, 103, 64, 14);
+		panel.add(lblCalle);
+		
+		JTextField txtCallePropietario = new JTextField();
+		txtCallePropietario.setColumns(10);
+		txtCallePropietario.setBounds(77, 100, 137, 20);
+		panel.add(txtCallePropietario);
+		
+		JLabel lblAltura = new JLabel("Altura");
+		lblAltura.setBounds(253, 103, 64, 14);
+		panel.add(lblAltura);
+		
+		txtAlturaPropietario = new JTextField();
+		txtAlturaPropietario.setColumns(10);
+		txtAlturaPropietario.setBounds(317, 100, 137, 20);
+		panel.add(txtAlturaPropietario);
+		
+		JLabel lblLocalidad = new JLabel("Localidad");
+		lblLocalidad.setBounds(10, 139, 70, 14);
+		panel.add(lblLocalidad);
+		
+		txtLocalidadPropietario = new JTextField();
+		txtLocalidadPropietario.setColumns(10);
+		txtLocalidadPropietario.setBounds(77, 136, 137, 20);
+		panel.add(txtLocalidadPropietario);
+		
+		JLabel lblDatosDelInquilino = new JLabel("Datos del Inquilino:");
+		lblDatosDelInquilino.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblDatosDelInquilino.setBounds(10, 210, 164, 25);
+		panel.add(lblDatosDelInquilino);
+		
+		JLabel lblDniInquilino = new JLabel("DNI");
+		lblDniInquilino.setBounds(10, 246, 70, 14);
+		panel.add(lblDniInquilino);
+		
+		JLabel lblApellidoInquilino = new JLabel("Apellido");
+		lblApellidoInquilino.setBounds(10, 271, 64, 14);
+		panel.add(lblApellidoInquilino);
+		
+		JLabel lblCalleInquilino = new JLabel("Calle");
+		lblCalleInquilino.setBounds(10, 296, 64, 14);
+		panel.add(lblCalleInquilino);
+		
+		JLabel lblLocalidadInquilino = new JLabel("Localidad");
+		lblLocalidadInquilino.setBounds(10, 330, 70, 14);
+		panel.add(lblLocalidadInquilino);
+		
+		txtDniInquilino = new JTextField();
+		txtDniInquilino.setColumns(10);
+		txtDniInquilino.setBounds(77, 243, 137, 20);
+		panel.add(txtDniInquilino);
+		
+		txtApellidoInquilino = new JTextField();
+		txtApellidoInquilino.setColumns(10);
+		txtApellidoInquilino.setBounds(77, 268, 137, 20);
+		panel.add(txtApellidoInquilino);
+		
+		txtCalleInquilino = new JTextField();
+		txtCalleInquilino.setColumns(10);
+		txtCalleInquilino.setBounds(77, 293, 137, 20);
+		panel.add(txtCalleInquilino);
+		
+		txtLocalidadInquilino = new JTextField();
+		txtLocalidadInquilino.setColumns(10);
+		txtLocalidadInquilino.setBounds(77, 324, 137, 20);
+		panel.add(txtLocalidadInquilino);
+		
+		JLabel label_4 = new JLabel("Nombre");
+		label_4.setBounds(253, 271, 70, 14);
+		panel.add(label_4);
+		
+		JLabel label_5 = new JLabel("Altura");
+		label_5.setBounds(253, 296, 64, 14);
+		panel.add(label_5);
+		
+		JLabel label_6 = new JLabel("Telefono");
+		label_6.setBounds(253, 330, 70, 14);
+		panel.add(label_6);
+		
+		txtNombreInquilino = new JTextField();
+		txtNombreInquilino.setColumns(10);
+		txtNombreInquilino.setBounds(317, 268, 137, 20);
+		panel.add(txtNombreInquilino);
+		
+		txtAlturaInquilino = new JTextField();
+		txtAlturaInquilino.setColumns(10);
+		txtAlturaInquilino.setBounds(317, 299, 137, 20);
+		panel.add(txtAlturaInquilino);
+		
+		txtTelefonoInquilino = new JTextField();
+		txtTelefonoInquilino.setColumns(10);
+		txtTelefonoInquilino.setBounds(317, 327, 137, 20);
+		panel.add(txtTelefonoInquilino);
+		
+		JLabel lblEmailInquilino = new JLabel("email");
+		lblEmailInquilino.setBounds(10, 360, 70, 14);
+		panel.add(lblEmailInquilino);
+		
+		txtEmailInquilino = new JTextField();
+		txtEmailInquilino.setColumns(10);
+		txtEmailInquilino.setBounds(77, 357, 137, 20);
+		panel.add(txtEmailInquilino);
+		
+		JLabel lblInmueble_1 = new JLabel("Datos del Inmueble:");
+		lblInmueble_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblInmueble_1.setBounds(10, 410, 164, 25);
+		panel.add(lblInmueble_1);
+		
+		JLabel lblActualizacin = new JLabel("Actualizaci\u00F3n");
+		lblActualizacin.setBounds(195, 528, 64, 14);
+		panel.add(lblActualizacin);
+		
+		JLabel lblTipo = new JLabel("Tipo");
+		lblTipo.setBounds(319, 452, 56, 14);
+		panel.add(lblTipo);
+		
+		JComboBox cmbxTipoAlquiler = new JComboBox();
+		cmbxTipoAlquiler.setBounds(357, 449, 97, 20);
+		panel.add(cmbxTipoAlquiler);
+		
+		JButton btnBuscarInquilino = new JButton("...");
+		btnBuscarInquilino.setBounds(253, 242, 41, 23);
+		panel.add(btnBuscarInquilino);
+		
+		JComboBox cmbxActualizacion = new JComboBox();
+		cmbxActualizacion.setBounds(264, 525, 95, 20);
+		panel.add(cmbxActualizacion);
+		
+		txtCargarArchivo = new JTextField();
+		txtCargarArchivo.setColumns(10);
+		txtCargarArchivo.setBounds(104, 568, 255, 20);
+		panel.add(txtCargarArchivo);
 	}
 }
