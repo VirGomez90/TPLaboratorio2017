@@ -376,4 +376,15 @@ public class Vista
 	public JButton getBtnVer() {
 		return btnVer;
 	}
+
+	
+	public JMenuItem getMntmNuevoContrato() {
+		return mntmNuevoContrato;
+	}
+
+	public JMenuItem getMntmConsultarContrato() {
+		return mntmConsultarContrato;
+	}
+
+
 }

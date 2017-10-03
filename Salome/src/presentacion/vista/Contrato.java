@@ -8,6 +8,9 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import com.toedter.calendar.JDateChooser;
+
+import presentacion.controlador.Controlador;
+
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
@@ -22,6 +25,7 @@ public class Contrato extends JFrame {
 	private JTextField txtApellidoPropietario;
 	private JTextField txtNombrePropietario;
 	private JTextField txtDNIPropietario;
+	private JTextField txtCallePropietario;
 	private JTextField txtTelefonoPropietario;
 	private JTextField txtEmailPropietario;
 	private JTextField txtMonto;
@@ -36,10 +40,17 @@ public class Contrato extends JFrame {
 	private JTextField txtTelefonoInquilino;
 	private JTextField txtEmailInquilino;
 	private JTextField txtCargarArchivo;
-
 	
-	public Contrato() {
-		setTitle("Contratos");
+	
+	private JButton btnGuardar;
+	private JButton btnBuscarPropietario;
+	private JButton btnBuscarInquilino;
+
+	Controlador controlador;
+	
+	public Contrato(Controlador controlador) 
+	{
+		setTitle("Contrato de Alquiler");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 601, 698);
 		contentPane = new JPanel();
@@ -131,7 +142,7 @@ public class Contrato extends JFrame {
 		txtEmailPropietario.setBounds(77, 164, 137, 20);
 		panel.add(txtEmailPropietario);
 		
-		JComboBox cmbxInmuebles = new JComboBox();
+		JComboBox<String> cmbxInmuebles = new JComboBox<String>();
 		cmbxInmuebles.setBounds(77, 449, 191, 20);
 		panel.add(cmbxInmuebles);
 		
@@ -140,19 +151,23 @@ public class Contrato extends JFrame {
 		txtMonto.setBounds(77, 522, 84, 20);
 		panel.add(txtMonto);
 		
-		JButton btnGuardar = new JButton("Guardar");
+		
+		btnGuardar = new JButton("Guardar");
 		btnGuardar.setBounds(466, 603, 89, 23);
+		btnGuardar.addActionListener(controlador);
 		panel.add(btnGuardar);
 		
-		JButton btnBuscarPropietario = new JButton("...");
+	
+		btnBuscarPropietario = new JButton("...");
 		btnBuscarPropietario.setBounds(250, 32, 41, 23);
 		panel.add(btnBuscarPropietario);
+		btnBuscarPropietario.addActionListener(controlador);
 		
 		JLabel lblCalle = new JLabel("Calle");
 		lblCalle.setBounds(10, 103, 64, 14);
 		panel.add(lblCalle);
 		
-		JTextField txtCallePropietario = new JTextField();
+		txtCallePropietario = new JTextField();
 		txtCallePropietario.setColumns(10);
 		txtCallePropietario.setBounds(77, 100, 137, 20);
 		panel.add(txtCallePropietario);
@@ -265,15 +280,16 @@ public class Contrato extends JFrame {
 		lblTipo.setBounds(319, 452, 56, 14);
 		panel.add(lblTipo);
 		
-		JComboBox cmbxTipoAlquiler = new JComboBox();
+		JComboBox<String> cmbxTipoAlquiler = new JComboBox<String>();
 		cmbxTipoAlquiler.setBounds(357, 449, 97, 20);
 		panel.add(cmbxTipoAlquiler);
 		
-		JButton btnBuscarInquilino = new JButton("...");
+		btnBuscarInquilino = new JButton("...");
 		btnBuscarInquilino.setBounds(253, 242, 41, 23);
 		panel.add(btnBuscarInquilino);
+		btnBuscarInquilino.addActionListener(controlador);
 		
-		JComboBox cmbxActualizacion = new JComboBox();
+		JComboBox<String> cmbxActualizacion = new JComboBox<String>();
 		cmbxActualizacion.setBounds(264, 525, 95, 20);
 		panel.add(cmbxActualizacion);
 		
