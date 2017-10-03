@@ -33,7 +33,7 @@ public class Controlador implements ActionListener
 	
 	public void llenarTabla()
 	{
-		this.vista.getModelPersonas().setRowCount(0); //Para vaciar la tabla
+		this.vista.getModelPersonas().setRowCount(0);
 		this.vista.getModelPersonas().setColumnCount(0);
 		this.vista.getModelPersonas().setColumnIdentifiers(this.vista.getNombreColumnas());
 		
@@ -46,6 +46,7 @@ public class Controlador implements ActionListener
 		{
 			this.ventanaContrato.setVisible(true);
 		}
+		
 	}
 
 }

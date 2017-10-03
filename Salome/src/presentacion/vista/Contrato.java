@@ -56,11 +56,12 @@ public class Contrato extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		setResizable(false); 
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0), 2));
-		panel.setBounds(10, 11, 565, 637);
+		panel.setBounds(10, 11, 575, 647);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -153,7 +154,7 @@ public class Contrato extends JFrame {
 		
 		
 		btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(466, 603, 89, 23);
+		btnGuardar.setBounds(476, 613, 89, 23);
 		btnGuardar.addActionListener(controlador);
 		panel.add(btnGuardar);
 		
