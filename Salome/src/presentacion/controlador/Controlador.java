@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import presentacion.vista.Contrato;
+import presentacion.vista.Interesados;
 import presentacion.vista.Vista;
 
 public class Controlador implements ActionListener 
@@ -11,9 +12,11 @@ public class Controlador implements ActionListener
 
 	Vista vista;
 	Contrato ventanaContrato;
+	Interesados ventanaInteresados;
 	
 	
 	ControladorContrato controladorContrato;
+	ControladorInteresado controladorInteresados;
 	
 	public Controlador(Vista vista)
 	{ 
@@ -53,6 +56,14 @@ public class Controlador implements ActionListener
 			controladorContrato = new ControladorContrato();
 			this.ventanaContrato = new Contrato(controladorContrato);
 			this.controladorContrato.inicialize();
+			
+		}
+		
+		if (e.getSource() == this.vista.getMntmNuevoInteresado())
+		{
+			controladorInteresados = new ControladorInteresado();
+			this.ventanaInteresados = new Interesados(controladorInteresados);
+			this.controladorInteresados.inicialize();
 			
 		}
 		
