@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import com.toedter.calendar.JDateChooser;
 
-import presentacion.controlador.Controlador;
+import presentacion.controlador.ControladorContrato;
 
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -46,9 +46,10 @@ public class Contrato extends JFrame {
 	private JButton btnBuscarPropietario;
 	private JButton btnBuscarInquilino;
 
-	Controlador controlador;
+	ControladorContrato controlador;
 	
-	public Contrato(Controlador controlador) 
+
+	public Contrato(ControladorContrato controlador) 
 	{
 		setTitle("Contrato de Alquiler");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -299,4 +300,162 @@ public class Contrato extends JFrame {
 		txtCargarArchivo.setBounds(104, 568, 255, 20);
 		panel.add(txtCargarArchivo);
 	}
+
+	public JButton getBtnGuardar() {
+		return btnGuardar;
+	}
+
+	public JButton getBtnBuscarPropietario() {
+		return btnBuscarPropietario;
+	}
+
+	public JButton getBtnBuscarInquilino() {
+		return btnBuscarInquilino;
+	}
+
+	public JTextField getTxtApellidoPropietario() {
+		return txtApellidoPropietario;
+	}
+
+	public void setTxtApellidoPropietario(JTextField txtApellidoPropietario) {
+		this.txtApellidoPropietario = txtApellidoPropietario;
+	}
+
+	public JTextField getTxtNombrePropietario() {
+		return txtNombrePropietario;
+	}
+
+	public void setTxtNombrePropietario(JTextField txtNombrePropietario) {
+		this.txtNombrePropietario = txtNombrePropietario;
+	}
+
+	public JTextField getTxtDNIPropietario() {
+		return txtDNIPropietario;
+	}
+
+	public void setTxtDNIPropietario(JTextField txtDNIPropietario) {
+		this.txtDNIPropietario = txtDNIPropietario;
+	}
+
+	public JTextField getTxtCallePropietario() {
+		return txtCallePropietario;
+	}
+
+	public void setTxtCallePropietario(JTextField txtCallePropietario) {
+		this.txtCallePropietario = txtCallePropietario;
+	}
+
+	public JTextField getTxtTelefonoPropietario() {
+		return txtTelefonoPropietario;
+	}
+
+	public void setTxtTelefonoPropietario(JTextField txtTelefonoPropietario) {
+		this.txtTelefonoPropietario = txtTelefonoPropietario;
+	}
+
+	public JTextField getTxtEmailPropietario() {
+		return txtEmailPropietario;
+	}
+
+	public void setTxtEmailPropietario(JTextField txtEmailPropietario) {
+		this.txtEmailPropietario = txtEmailPropietario;
+	}
+
+	public JTextField getTxtMonto() {
+		return txtMonto;
+	}
+
+	public void setTxtMonto(JTextField txtMonto) {
+		this.txtMonto = txtMonto;
+	}
+
+	public JTextField getTxtAlturaPropietario() {
+		return txtAlturaPropietario;
+	}
+
+	public void setTxtAlturaPropietario(JTextField txtAlturaPropietario) {
+		this.txtAlturaPropietario = txtAlturaPropietario;
+	}
+
+	public JTextField getTxtLocalidadPropietario() {
+		return txtLocalidadPropietario;
+	}
+
+	public void setTxtLocalidadPropietario(JTextField txtLocalidadPropietario) {
+		this.txtLocalidadPropietario = txtLocalidadPropietario;
+	}
+
+	public JTextField getTxtDniInquilino() {
+		return txtDniInquilino;
+	}
+
+	public void setTxtDniInquilino(JTextField txtDniInquilino) {
+		this.txtDniInquilino = txtDniInquilino;
+	}
+
+	public JTextField getTxtApellidoInquilino() {
+		return txtApellidoInquilino;
+	}
+
+	public void setTxtApellidoInquilino(JTextField txtApellidoInquilino) {
+		this.txtApellidoInquilino = txtApellidoInquilino;
+	}
+
+	public JTextField getTxtCalleInquilino() {
+		return txtCalleInquilino;
+	}
+
+	public void setTxtCalleInquilino(JTextField txtCalleInquilino) {
+		this.txtCalleInquilino = txtCalleInquilino;
+	}
+
+	public JTextField getTxtLocalidadInquilino() {
+		return txtLocalidadInquilino;
+	}
+
+	public void setTxtLocalidadInquilino(JTextField txtLocalidadInquilino) {
+		this.txtLocalidadInquilino = txtLocalidadInquilino;
+	}
+
+	public JTextField getTxtNombreInquilino() {
+		return txtNombreInquilino;
+	}
+
+	public void setTxtNombreInquilino(JTextField txtNombreInquilino) {
+		this.txtNombreInquilino = txtNombreInquilino;
+	}
+
+	public JTextField getTxtAlturaInquilino() {
+		return txtAlturaInquilino;
+	}
+
+	public void setTxtAlturaInquilino(JTextField txtAlturaInquilino) {
+		this.txtAlturaInquilino = txtAlturaInquilino;
+	}
+
+	public JTextField getTxtTelefonoInquilino() {
+		return txtTelefonoInquilino;
+	}
+
+	public void setTxtTelefonoInquilino(JTextField txtTelefonoInquilino) {
+		this.txtTelefonoInquilino = txtTelefonoInquilino;
+	}
+
+	public JTextField getTxtEmailInquilino() {
+		return txtEmailInquilino;
+	}
+
+	public void setTxtEmailInquilino(JTextField txtEmailInquilino) {
+		this.txtEmailInquilino = txtEmailInquilino;
+	}
+
+	public JTextField getTxtCargarArchivo() {
+		return txtCargarArchivo;
+	}
+
+	public void setTxtCargarArchivo(JTextField txtCargarArchivo) {
+		this.txtCargarArchivo = txtCargarArchivo;
+	}
+
+
 }
