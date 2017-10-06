@@ -43,7 +43,6 @@ public class Interesados extends JFrame {
 	public Interesados(ControladorInteresado controladorInteresado) 
 	{
 		setTitle("Registrar interesado");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 601, 698);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
