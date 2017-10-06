@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 
-public class Contrato extends JFrame {
+public class ContratoAlquiler extends JFrame {
 
 	/**
 	 * 
@@ -49,7 +49,7 @@ public class Contrato extends JFrame {
 	ControladorContrato controlador;
 	
 
-	public Contrato(ControladorContrato controlador) 
+	public ContratoAlquiler(ControladorContrato controlador) 
 	{
 		setTitle("Contrato de Alquiler");
 		setBounds(100, 100, 601, 698);

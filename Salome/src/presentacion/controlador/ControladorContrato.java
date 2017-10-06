@@ -3,15 +3,15 @@ package presentacion.controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import presentacion.vista.Contrato;
+import presentacion.vista.ContratoAlquiler;
 
 public class ControladorContrato implements ActionListener
 {
-	Contrato ventanaContrato;
+	ContratoAlquiler ventanaContrato;
 	
 	public ControladorContrato ()
 	{
-		this.ventanaContrato = new Contrato(this);
+		this.ventanaContrato = new ContratoAlquiler(this);
 		this.ventanaContrato.setVisible(true);
 		
 	}
