@@ -52,7 +52,6 @@ public class Contrato extends JFrame {
 	public Contrato(ControladorContrato controlador) 
 	{
 		setTitle("Contrato de Alquiler");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 601, 698);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
