@@ -13,7 +13,7 @@ import persistencia.conexion.Conexion;
 
 public class PagoDAO {
 	private static final String selectAll = "SELECT * FROM Pago";
-	private static final String insert = "INSERT INTO Pago(idPago,	idContrato,	mes, pagoDuenio, cobroInqui, valor, interes) VALUES(?, ?, ?, ?, ?, ?, ? )";
+	private static final String insert = "INSERT INTO Pago(idPago,	idContrato,	mes, pagoDuenio, cobroInqui, valor, interes, monto) VALUES(?, ?, ?, ?, ?, ?, ?, ? )";
 	private static final String delete = "DELETE FROM Pago WHERE idPago = ?";
 	private static final String update = "UPDATE Pago SET WHERE idPago= ?";
 	private static final String selectById = "SELECT * FROM Pago WHERE idPago = ?";
@@ -38,7 +38,8 @@ public class PagoDAO {
 						resultSet.getInt("pagoDuenio"),
 						resultSet.getInt("cobroInqui"),
 						resultSet.getInt("valor"),
-						resultSet.getInt("interes")
+						resultSet.getInt("interes"),
+						resultSet.getInt("monto")
 						));
 			}
 		} 
@@ -65,6 +66,7 @@ public class PagoDAO {
 			statement.setInt(5, pago.getCobroInqui());
 			statement.setInt(6, pago.getValor());
 			statement.setInt(7, pago.getInteres());
+			statement.setInt(8, pago.getMonto());
 			if(statement.executeUpdate() > 0) //Si se ejecuta devuelvo true
 				return true;
 		} 
@@ -92,7 +94,8 @@ public class PagoDAO {
 			statement.setInt(5, pago.getCobroInqui());
 			statement.setInt(6, pago.getValor());
 			statement.setInt(7, pago.getInteres());
-			statement.setInt(8, pagoUpdate);
+			statement.setInt(8, pago.getMonto());
+			statement.setInt(9, pagoUpdate);
 			if(statement.executeUpdate() > 0) 
 				return true;
 		} 

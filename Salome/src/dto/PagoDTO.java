@@ -8,6 +8,7 @@ public class PagoDTO {
 	private int cobroInqui;
 	private int valor;
 	private int interes;
+	private int monto;
 	
 	public PagoDTO(
 		int idPago,
@@ -16,7 +17,8 @@ public class PagoDTO {
 		int pagoDuenio,
 		int cobroInqui,
 		int valor,
-		int interes)
+		int interes,
+		int monto)
 	{
 		this.idPago = idPago;
 		this.idContrato = idContrato;
@@ -25,6 +27,7 @@ public class PagoDTO {
 		this.cobroInqui = cobroInqui;
 		this.valor = valor;
 		this.interes= interes;
+		this.monto= monto;
 	}
 	
 	public int getIdPago() {
@@ -68,6 +71,14 @@ public class PagoDTO {
 	}
 	public void setInteres(int interes) {
 		this.interes = interes;
+	}
+
+	public int getMonto() {
+		return monto;
+	}
+
+	public void setMonto(int monto) {
+		this.monto = monto;
 	}
 	
 

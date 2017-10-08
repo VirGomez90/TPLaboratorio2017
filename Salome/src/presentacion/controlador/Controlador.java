@@ -27,11 +27,12 @@ public class Controlador implements ActionListener
 		this.vista = vista;
 		this.vista.getBtnBuscar().addActionListener(this);
 		this.vista.getBtnVer().addActionListener(this);
-		this.vista.getMnContratos().addActionListener(this);
+		this.vista.getMnContratos().addActionListener(this); 
 		this.vista.getMntmContratoAlquiler().addActionListener(this);
 		this.vista.getMntmConsultarContrato().addActionListener(this);
 		this.vista.getMnInteresados().addActionListener(this);
 		this.vista.getMntmConsultarInteresados().addActionListener(this);
+		this.vista.getMntmPago().addActionListener(this);
 		
 	}
 
@@ -67,6 +68,14 @@ public class Controlador implements ActionListener
 			this.controladorInteresados.inicialize();
 			
 		}
+		
+//		if (e.getSource() == this.vista.getMntmPago())
+//		{
+//			controladorContrato = new ControladorContrato();
+//			this.vC = new VentanaContrato1(controladorContrato);
+//			this.controladorContrato.inicialize();
+//			
+//		}
 		
 	}
 
