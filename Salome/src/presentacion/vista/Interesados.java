@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JTable;
+import javax.swing.JComboBox;
 
 
 public class Interesados extends JFrame {
@@ -35,6 +36,8 @@ public class Interesados extends JFrame {
 	private JTextField textMtsTotal;
 	private JTextField textBaños;
 	private JTextField textHabitaciones;
+	
+	private JComboBox<String> cmboxTipoInmueble;
 	
 	public Interesados(ControladorInteresado controladorInteresado) 
 	{
@@ -88,47 +91,47 @@ public class Interesados extends JFrame {
 		panel.add(lblBuscarPor);
 		
 		JLabel lblAmbientes = new JLabel("Ambientes");
-		lblAmbientes.setBounds(361, 305, 68, 14);
+		lblAmbientes.setBounds(355, 283, 68, 14);
 		panel.add(lblAmbientes);
 		
 		JLabel lblMtsCubiertos = new JLabel("Mts Cubiertos");
-		lblMtsCubiertos.setBounds(361, 331, 68, 14);
+		lblMtsCubiertos.setBounds(355, 331, 68, 14);
 		panel.add(lblMtsCubiertos);
 		
 		JLabel lblMtsTotal = new JLabel("Mts total");
-		lblMtsTotal.setBounds(361, 356, 68, 14);
+		lblMtsTotal.setBounds(355, 356, 68, 14);
 		panel.add(lblMtsTotal);
 		
 		JCheckBox chckbxNewQuincho = new JCheckBox("Quincho");
-		chckbxNewQuincho.setBounds(362, 441, 97, 23);
+		chckbxNewQuincho.setBounds(355, 468, 97, 23);
 		panel.add(chckbxNewQuincho);
 		
 		JCheckBox chckbxParrilla = new JCheckBox("Parrilla");
-		chckbxParrilla.setBounds(361, 469, 97, 23);
+		chckbxParrilla.setBounds(355, 494, 97, 23);
 		panel.add(chckbxParrilla);
 		
 		JCheckBox chckbxSalon = new JCheckBox("Salon");
-		chckbxSalon.setBounds(362, 524, 97, 23);
+		chckbxSalon.setBounds(355, 546, 97, 23);
 		panel.add(chckbxSalon);
 		
 		JLabel lblBaos = new JLabel("Ba\u00F1os");
-		lblBaos.setBounds(361, 377, 46, 14);
+		lblBaos.setBounds(355, 377, 46, 14);
 		panel.add(lblBaos);
 		
 		JLabel lblHabitaciones = new JLabel("Habitaciones");
-		lblHabitaciones.setBounds(361, 409, 61, 14);
+		lblHabitaciones.setBounds(355, 308, 61, 14);
 		panel.add(lblHabitaciones);
 		
 		JCheckBox chckbxPileta = new JCheckBox("Pileta");
-		chckbxPileta.setBounds(361, 498, 97, 23);
+		chckbxPileta.setBounds(355, 520, 97, 23);
 		panel.add(chckbxPileta);
 		
 		JCheckBox chckbxBalcon = new JCheckBox("Balcon");
-		chckbxBalcon.setBounds(362, 550, 97, 23);
+		chckbxBalcon.setBounds(355, 572, 97, 23);
 		panel.add(chckbxBalcon);
 		
 		textAmbientes = new JTextField();
-		textAmbientes.setBounds(428, 305, 68, 14);
+		textAmbientes.setBounds(428, 283, 68, 14);
 		panel.add(textAmbientes);
 		textAmbientes.setColumns(10);
 		
@@ -149,8 +152,20 @@ public class Interesados extends JFrame {
 		
 		textHabitaciones = new JTextField();
 		textHabitaciones.setColumns(10);
-		textHabitaciones.setBounds(428, 409, 68, 14);
+		textHabitaciones.setBounds(428, 308, 68, 14);
 		panel.add(textHabitaciones);
+		
+		JCheckBox chckbxGarage = new JCheckBox("Garage");
+		chckbxGarage.setBounds(355, 442, 97, 23);
+		panel.add(chckbxGarage);
+		
+		JLabel lblTipoInmueble = new JLabel("Tipo Inmueble");
+		lblTipoInmueble.setBounds(355, 407, 81, 14);
+		panel.add(lblTipoInmueble);
+		
+		cmboxTipoInmueble = new JComboBox<String>();
+		cmboxTipoInmueble.setBounds(428, 402, 68, 20);
+		panel.add(cmboxTipoInmueble);
 		
 	}
 	

@@ -8,7 +8,6 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import dto.EgresosDTO;
 import dto.PagoDTO;
 import persistencia.conexion.Conexion;
 
