@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import com.toedter.calendar.JDateChooser;
 
-import presentacion.controlador.ControladorContrato;
+import presentacion.controlador.ControladorContratoAlquiler;
 
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -54,11 +54,11 @@ public class VentanaContratoAlquiler extends JFrame {
 	private JButton btnBuscarPropietario;
 	private JButton btnBuscarInquilino;
 
-	ControladorContrato controlador;
+	ControladorContratoAlquiler controlador;
 	private JTextField txtCargarArchivo;
 	
 
-	public VentanaContratoAlquiler(ControladorContrato controlador) 
+	public VentanaContratoAlquiler(ControladorContratoAlquiler controlador) 
 	{
 		//prueba
 		setTitle("Contrato de Alquiler");

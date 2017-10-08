@@ -15,7 +15,7 @@ import javax.swing.border.LineBorder;
 
 import com.toedter.calendar.JDateChooser;
 
-import presentacion.controlador.ControladorContrato;
+import presentacion.controlador.ControladorContratoAlquiler;
 
 public class ContratoCompraVenta extends JFrame {
 
@@ -48,11 +48,11 @@ public class ContratoCompraVenta extends JFrame {
 	private JButton btnBuscarVendedor;
 	private JButton btnBuscarInquilino;
 
-	ControladorContrato controlador;
+	ControladorContratoAlquiler controlador;
 	private JTextField txtComision;
 	
 
-	public ContratoCompraVenta(ControladorContrato controlador) 
+	public ContratoCompraVenta(ControladorContratoAlquiler controlador) 
 	{
 		//comentario de prueba
 		setTitle("Contrato de Compra/Venta");

@@ -15,7 +15,7 @@ import java.awt.Font;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JYearChooser;
 
-import presentacion.controlador.ControladorContrato;
+import presentacion.controlador.ControladorContratoAlquiler;
 
 import javax.swing.ImageIcon;
 
@@ -32,13 +32,13 @@ public class VentanaContrato1 extends JFrame {
 
 	private  String[] nombreColumnas = {"Fecha", "Inquilino"};
 	
-	ControladorContrato controlador;
+	ControladorContratoAlquiler controlador;
 	
 	JButton btnNuevoContratoAlquiler;
 	JButton btnRenovarContrato;
 	JButton btnBuscar;
 	
-	public VentanaContrato1(ControladorContrato controlador) 
+	public VentanaContrato1(ControladorContratoAlquiler controlador) 
 	{
 		//comentario
 		setTitle("Contratos");

@@ -3,16 +3,16 @@ package presentacion.controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import presentacion.vista.Interesados;
+import presentacion.vista.VistaInteresado;
 
 import presentacion.vista.VistaInteresadosAlta;
 
 public class ControladorInteresado implements ActionListener{ 
-	Interesados ventanaInteresado;
+	VistaInteresado ventanaInteresado;
 	VistaInteresadosAlta ventanaAltaInteresados;
 	
 	public ControladorInteresado(){
-		this.ventanaInteresado = new Interesados(this);
+		this.ventanaInteresado = new VistaInteresado(this);
 		this.ventanaInteresado.setVisible(true);
 		this.ventanaInteresado.getBtnAgregar().addActionListener(this);
 
