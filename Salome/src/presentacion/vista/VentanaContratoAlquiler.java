@@ -14,6 +14,7 @@ import presentacion.controlador.ControladorContrato;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
+import javax.swing.JSpinner;
 
 public class VentanaContratoAlquiler extends JFrame {
 
@@ -39,21 +40,29 @@ public class VentanaContratoAlquiler extends JFrame {
 	private JTextField txtAlturaInquilino;
 	private JTextField txtTelefonoInquilino;
 	private JTextField txtEmailInquilino;
-	private JTextField txtCargarArchivo;
+	JComboBox<String> cmbxInmuebles;
 	
+	JDateChooser dChFechaInicio;
+	JDateChooser dChFechaFin;
+	JComboBox<String> cmbxTipoAlquiler;
+	JComboBox<String> cmbxEscribania;
+	
+	JSpinner spinnerIncremento;
+	JSpinner spinnerComision;
 	
 	private JButton btnGuardar;
 	private JButton btnBuscarPropietario;
 	private JButton btnBuscarInquilino;
 
 	ControladorContrato controlador;
+	private JTextField txtCargarArchivo;
 	
 
 	public VentanaContratoAlquiler(ControladorContrato controlador) 
 	{
 		//prueba
 		setTitle("Contrato de Alquiler");
-		setBounds(100, 100, 601, 698);
+		setBounds(100, 100, 601, 801);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -62,7 +71,7 @@ public class VentanaContratoAlquiler extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(0, 0, 0), 2));
-		panel.setBounds(10, 11, 575, 647);
+		panel.setBounds(0, 11, 575, 721);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -99,7 +108,7 @@ public class VentanaContratoAlquiler extends JFrame {
 		lblFechaInicio.setBounds(10, 494, 84, 14);
 		panel.add(lblFechaInicio);
 		
-		JDateChooser dChFechaInicio = new JDateChooser();
+		dChFechaInicio = new JDateChooser();
 		dChFechaInicio.setBounds(77, 488, 97, 20);
 		panel.add(dChFechaInicio);
 		
@@ -107,17 +116,14 @@ public class VentanaContratoAlquiler extends JFrame {
 		lblFechaFin.setBounds(195, 494, 64, 14);
 		panel.add(lblFechaFin);
 		
-		JDateChooser dChFechaFin = new JDateChooser();
+
+		dChFechaFin = new JDateChooser();
 		dChFechaFin.setBounds(262, 488, 97, 20);
 		panel.add(dChFechaFin);
 		
 		JLabel lblMonto = new JLabel("Monto");
 		lblMonto.setBounds(10, 525, 64, 14);
 		panel.add(lblMonto);
-		
-		JLabel lblCargarArchivo = new JLabel("Cargar archivo");
-		lblCargarArchivo.setBounds(10, 571, 84, 14);
-		panel.add(lblCargarArchivo);
 		
 		txtApellidoPropietario = new JTextField();
 		txtApellidoPropietario.setBounds(77, 65, 137, 20);
@@ -144,7 +150,8 @@ public class VentanaContratoAlquiler extends JFrame {
 		txtEmailPropietario.setBounds(77, 164, 137, 20);
 		panel.add(txtEmailPropietario);
 		
-		JComboBox<String> cmbxInmuebles = new JComboBox<String>();
+		
+		cmbxInmuebles = new JComboBox<String>();
 		cmbxInmuebles.setBounds(77, 449, 191, 20);
 		panel.add(cmbxInmuebles);
 		
@@ -155,7 +162,7 @@ public class VentanaContratoAlquiler extends JFrame {
 		
 		
 		btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(476, 613, 89, 23);
+		btnGuardar.setBounds(476, 687, 89, 23);
 		btnGuardar.addActionListener(controlador);
 		panel.add(btnGuardar);
 		
@@ -274,31 +281,51 @@ public class VentanaContratoAlquiler extends JFrame {
 		lblInmueble_1.setBounds(10, 410, 164, 25);
 		panel.add(lblInmueble_1);
 		
-		JLabel lblActualizacin = new JLabel("Actualizaci\u00F3n");
-		lblActualizacin.setBounds(195, 528, 64, 14);
-		panel.add(lblActualizacin);
-		
 		JLabel lblTipo = new JLabel("Tipo");
 		lblTipo.setBounds(319, 452, 56, 14);
 		panel.add(lblTipo);
 		
-		JComboBox<String> cmbxTipoAlquiler = new JComboBox<String>();
+		cmbxTipoAlquiler = new JComboBox<String>();
 		cmbxTipoAlquiler.setBounds(357, 449, 97, 20);
 		panel.add(cmbxTipoAlquiler);
 		
 		btnBuscarInquilino = new JButton("...");
 		btnBuscarInquilino.setBounds(253, 242, 41, 23);
 		panel.add(btnBuscarInquilino);
-		btnBuscarInquilino.addActionListener(controlador);
 		
-		JComboBox<String> cmbxActualizacion = new JComboBox<String>();
-		cmbxActualizacion.setBounds(264, 525, 95, 20);
-		panel.add(cmbxActualizacion);
+		JLabel lblIncremento = new JLabel("% incremento");
+		lblIncremento.setBounds(10, 567, 77, 14);
+		panel.add(lblIncremento);
+		
+		spinnerIncremento = new JSpinner();
+		spinnerIncremento.setBounds(97, 564, 47, 20);
+		panel.add(spinnerIncremento);
+		
+		JLabel lblComisin = new JLabel("% comisi\u00F3n");
+		lblComisin.setBounds(195, 567, 77, 14);
+		panel.add(lblComisin);
+		
+		spinnerComision = new JSpinner();
+		spinnerComision.setBounds(270, 564, 47, 20);
+		panel.add(spinnerComision);
+		
+		JLabel lblEscribania = new JLabel("Escribania");
+		lblEscribania.setBounds(10, 619, 64, 14);
+		panel.add(lblEscribania);
+		
+		cmbxEscribania = new JComboBox<String>();
+		cmbxEscribania.setBounds(77, 616, 191, 20);
+		panel.add(cmbxEscribania);
+		
+		JLabel lblCargarArchivo = new JLabel("Cargar Archivo");
+		lblCargarArchivo.setBounds(10, 661, 84, 14);
+		panel.add(lblCargarArchivo);
 		
 		txtCargarArchivo = new JTextField();
 		txtCargarArchivo.setColumns(10);
-		txtCargarArchivo.setBounds(104, 568, 255, 20);
+		txtCargarArchivo.setBounds(90, 658, 178, 20);
 		panel.add(txtCargarArchivo);
+		btnBuscarInquilino.addActionListener(controlador);
 	}
 
 	public JButton getBtnGuardar() {
@@ -449,6 +476,62 @@ public class VentanaContratoAlquiler extends JFrame {
 		this.txtEmailInquilino = txtEmailInquilino;
 	}
 
+	public JComboBox<String> getCmbxInmuebles() {
+		return cmbxInmuebles;
+	}
+
+	public void setCmbxInmuebles(JComboBox<String> cmbxInmuebles) {
+		this.cmbxInmuebles = cmbxInmuebles;
+	}
+
+	public JDateChooser getdChFechaInicio() {
+		return dChFechaInicio;
+	}
+
+	public void setdChFechaInicio(JDateChooser dChFechaInicio) {
+		this.dChFechaInicio = dChFechaInicio;
+	}
+
+	public JDateChooser getdChFechaFin() {
+		return dChFechaFin;
+	}
+
+	public void setdChFechaFin(JDateChooser dChFechaFin) {
+		this.dChFechaFin = dChFechaFin;
+	}
+
+	public JComboBox<String> getCmbxTipoAlquiler() {
+		return cmbxTipoAlquiler;
+	}
+
+	public void setCmbxTipoAlquiler(JComboBox<String> cmbxTipoAlquiler) {
+		this.cmbxTipoAlquiler = cmbxTipoAlquiler;
+	}
+
+	public JComboBox<String> getCmbxEscribania() {
+		return cmbxEscribania;
+	}
+
+	public void setCmbxEscribania(JComboBox<String> cmbxEscribania) {
+		this.cmbxEscribania = cmbxEscribania;
+	}
+
+	public JSpinner getSpinnerIncremento() {
+		return spinnerIncremento;
+	}
+
+	public void setSpinnerIncremento(JSpinner spinnerIncremento) {
+		this.spinnerIncremento = spinnerIncremento;
+	}
+
+	public JSpinner getSpinnerComision() {
+		return spinnerComision;
+	}
+
+	public void setSpinnerComision(JSpinner spinnerComision) {
+		this.spinnerComision = spinnerComision;
+	}
+
 	public JTextField getTxtCargarArchivo() {
 		return txtCargarArchivo;
 	}
@@ -456,6 +539,6 @@ public class VentanaContratoAlquiler extends JFrame {
 	public void setTxtCargarArchivo(JTextField txtCargarArchivo) {
 		this.txtCargarArchivo = txtCargarArchivo;
 	}
-
-
+	
+	
 }
