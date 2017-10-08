@@ -1,48 +1,44 @@
 package presentacion.vista;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableModel;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-import presentacion.controlador.Controlador;
 import presentacion.controlador.ControladorInteresado;
 
 import javax.swing.JTextField;
-import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JSeparator;
+import javax.swing.JTable;
+
 
 public class Interesados extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField txtApellidoPropietario;
-	private JTextField txtNombrePropietario;
-	private JTextField txtDNIPropietario;
-	private JTextField txtCallePropietario;
-	private JTextField txtTelefonoPropietario;
-	private JTextField txtEmailPropietario;
-	private JTextField txtHabitaciones;
-	private JTextField txtAlturaPropietario;
-	private JTextField txtLocalidadPropietario;
-	
-	
-	private JButton btnGuardar;
-	private JButton btnBuscarPropietario;
+	private JTable tablaPersonas;
+	private DefaultTableModel modelPersonas;
+	private  String[] nombreColumnas = {"Nombre", "Apellido", "DNI","Telefono" , "Email"};
+	private JButton btnAgregar;
+	private JButton btnBorrar;
+	private JButton btnEditar;
+	private JButton btnBuscar;
 
-	Controlador controlador;
 	private JTextField textAmbientes;
 	private JTextField textMtsCubiertos;
-	private JTextField textMtsTotales;
-	private JTextField textBanios;
+	private JTextField textMtsTotal;
+	private JTextField textBaños;
+	private JTextField textHabitaciones;
 	
 	public Interesados(ControladorInteresado controladorInteresado) 
 	{
-		setTitle("Registrar interesado");
+		setTitle("Menu Interesados");
 		setBounds(100, 100, 601, 698);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -56,303 +52,127 @@ public class Interesados extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblDatos = new JLabel("Datos del la Persona Interesada");
-		lblDatos.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblDatos.setBounds(10, 24, 204, 25);
-		panel.add(lblDatos);
+		JScrollPane spPersonas = new JScrollPane();
+		spPersonas.setBounds(10, 11, 304, 625);
+		panel.add(spPersonas);
+		modelPersonas = new DefaultTableModel(null,nombreColumnas);
+
+		tablaPersonas = new JTable(modelPersonas);
 		
-		JLabel lblApellido = new JLabel("Apellido");
-		lblApellido.setBounds(10, 108, 64, 14);
-		panel.add(lblApellido);
+		tablaPersonas.getColumnModel().getColumn(0).setPreferredWidth(103);
+		tablaPersonas.getColumnModel().getColumn(0).setResizable(false);
+		tablaPersonas.getColumnModel().getColumn(1).setPreferredWidth(100);
+		tablaPersonas.getColumnModel().getColumn(1).setResizable(false);
 		
-		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setBounds(253, 108, 70, 14);
-		panel.add(lblNombre);
+		spPersonas.setViewportView(tablaPersonas);
 		
-		JLabel lblDni = new JLabel("DNI");
-		lblDni.setBounds(10, 76, 70, 14);
-		panel.add(lblDni);
+		btnAgregar = new JButton("Agregar");
+		btnAgregar.setBounds(407, 46, 89, 23);
+		panel.add(btnAgregar);
 		
-		JLabel lblTelefono = new JLabel("Telefono");
-		lblTelefono.setBounds(253, 179, 70, 14);
-		panel.add(lblTelefono);
+		btnEditar = new JButton("Editar");
+		btnEditar.setBounds(407, 98, 89, 23);
+		panel.add(btnEditar);
 		
-		JLabel lblEmail = new JLabel("email");
-		lblEmail.setBounds(10, 207, 70, 14);
-		panel.add(lblEmail);
+		btnBorrar = new JButton("Borrar");
+		btnBorrar.setBounds(407, 159, 89, 23);
+		panel.add(btnBorrar);
+		
+		btnBuscar = new JButton("Buscar");
+		btnBuscar.setBounds(407, 600, 89, 23);
+		panel.add(btnBuscar);
+		
+		JLabel lblBuscarPor = new JLabel("Filtrar resultados por :");
+		lblBuscarPor.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblBuscarPor.setBounds(355, 250, 168, 14);
+		panel.add(lblBuscarPor);
 		
 		JLabel lblAmbientes = new JLabel("Ambientes");
-		lblAmbientes.setBounds(10, 328, 70, 14);
+		lblAmbientes.setBounds(361, 305, 68, 14);
 		panel.add(lblAmbientes);
 		
-		JLabel lblMtsVubiertos = new JLabel("Metros cubiertos");
-		lblMtsVubiertos.setBounds(253, 328, 84, 14);
-		panel.add(lblMtsVubiertos);
+		JLabel lblMtsCubiertos = new JLabel("Mts Cubiertos");
+		lblMtsCubiertos.setBounds(361, 331, 68, 14);
+		panel.add(lblMtsCubiertos);
 		
-		JLabel lblMtsTotales = new JLabel("Metros totales");
-		lblMtsTotales.setBounds(253, 359, 84, 14);
-		panel.add(lblMtsTotales);
+		JLabel lblMtsTotal = new JLabel("Mts total");
+		lblMtsTotal.setBounds(361, 356, 68, 14);
+		panel.add(lblMtsTotal);
 		
-		txtApellidoPropietario = new JTextField();
-		txtApellidoPropietario.setBounds(77, 105, 137, 20);
-		panel.add(txtApellidoPropietario);
-		txtApellidoPropietario.setColumns(10);
-		
-		txtNombrePropietario = new JTextField();
-		txtNombrePropietario.setColumns(10);
-		txtNombrePropietario.setBounds(317, 108, 137, 20);
-		panel.add(txtNombrePropietario);
-		
-		txtDNIPropietario = new JTextField();
-		txtDNIPropietario.setColumns(10);
-		txtDNIPropietario.setBounds(77, 76, 137, 20);
-		panel.add(txtDNIPropietario);
-		
-		txtTelefonoPropietario = new JTextField();
-		txtTelefonoPropietario.setColumns(10);
-		txtTelefonoPropietario.setBounds(317, 176, 137, 20);
-		panel.add(txtTelefonoPropietario);
-		
-		txtEmailPropietario = new JTextField();
-		txtEmailPropietario.setColumns(10);
-		txtEmailPropietario.setBounds(77, 204, 137, 20);
-		panel.add(txtEmailPropietario);
-		
-		txtHabitaciones = new JTextField();
-		txtHabitaciones.setColumns(10);
-		txtHabitaciones.setBounds(87, 356, 64, 20);
-		panel.add(txtHabitaciones);
-		
-		
-		btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(233, 589, 89, 23);
-		btnGuardar.addActionListener(controladorInteresado);
-		panel.add(btnGuardar);
-		
-	
-		btnBuscarPropietario = new JButton("...");
-		btnBuscarPropietario.setBounds(250, 72, 41, 23);
-		panel.add(btnBuscarPropietario);
-		btnBuscarPropietario.addActionListener(controladorInteresado);
-		
-		JLabel lblCalle = new JLabel("Calle");
-		lblCalle.setBounds(10, 143, 64, 14);
-		panel.add(lblCalle);
-		
-		txtCallePropietario = new JTextField();
-		txtCallePropietario.setColumns(10);
-		txtCallePropietario.setBounds(77, 140, 137, 20);
-		panel.add(txtCallePropietario);
-		
-		JLabel lblAltura = new JLabel("Altura");
-		lblAltura.setBounds(253, 143, 64, 14);
-		panel.add(lblAltura);
-		
-		txtAlturaPropietario = new JTextField();
-		txtAlturaPropietario.setColumns(10);
-		txtAlturaPropietario.setBounds(317, 140, 137, 20);
-		panel.add(txtAlturaPropietario);
-		
-		JLabel lblLocalidad = new JLabel("Localidad");
-		lblLocalidad.setBounds(10, 179, 70, 14);
-		panel.add(lblLocalidad);
-		
-		txtLocalidadPropietario = new JTextField();
-		txtLocalidadPropietario.setColumns(10);
-		txtLocalidadPropietario.setBounds(77, 176, 137, 20);
-		panel.add(txtLocalidadPropietario);
-		
-		JLabel lblInmueble_1 = new JLabel("Datos del Inmueble que busca:");
-		lblInmueble_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblInmueble_1.setBounds(10, 268, 189, 25);
-		panel.add(lblInmueble_1);
-		
-		JComboBox<String> cmbxTipoInmueble = new JComboBox<String>();
-		cmbxTipoInmueble.setBounds(119, 508, 95, 20);
-		panel.add(cmbxTipoInmueble);
-		
-		JLabel lblHabitaciones = new JLabel("Habitaciones");
-		lblHabitaciones.setBounds(10, 359, 84, 14);
-		panel.add(lblHabitaciones);
-		
-		JLabel lblTipoInmueble = new JLabel("Tipo de inmueble");
-		lblTipoInmueble.setBounds(10, 511, 99, 14);
-		panel.add(lblTipoInmueble);
-		
-		JCheckBox chckbxQuincho = new JCheckBox("Quincho");
-		chckbxQuincho.setBounds(10, 443, 97, 23);
-		panel.add(chckbxQuincho);
+		JCheckBox chckbxNewQuincho = new JCheckBox("Quincho");
+		chckbxNewQuincho.setBounds(362, 441, 97, 23);
+		panel.add(chckbxNewQuincho);
 		
 		JCheckBox chckbxParrilla = new JCheckBox("Parrilla");
-		chckbxParrilla.setBounds(10, 391, 97, 23);
+		chckbxParrilla.setBounds(361, 469, 97, 23);
 		panel.add(chckbxParrilla);
 		
 		JCheckBox chckbxSalon = new JCheckBox("Salon");
-		chckbxSalon.setBounds(10, 417, 97, 23);
+		chckbxSalon.setBounds(362, 524, 97, 23);
 		panel.add(chckbxSalon);
 		
-		JCheckBox chckbxGarage = new JCheckBox("Garage");
-		chckbxGarage.setBounds(253, 428, 97, 23);
-		panel.add(chckbxGarage);
+		JLabel lblBaos = new JLabel("Ba\u00F1os");
+		lblBaos.setBounds(361, 377, 46, 14);
+		panel.add(lblBaos);
+		
+		JLabel lblHabitaciones = new JLabel("Habitaciones");
+		lblHabitaciones.setBounds(361, 409, 61, 14);
+		panel.add(lblHabitaciones);
 		
 		JCheckBox chckbxPileta = new JCheckBox("Pileta");
-		chckbxPileta.setBounds(10, 469, 97, 23);
+		chckbxPileta.setBounds(361, 498, 97, 23);
 		panel.add(chckbxPileta);
 		
 		JCheckBox chckbxBalcon = new JCheckBox("Balcon");
-		chckbxBalcon.setBounds(253, 469, 97, 23);
+		chckbxBalcon.setBounds(362, 550, 97, 23);
 		panel.add(chckbxBalcon);
 		
 		textAmbientes = new JTextField();
-		textAmbientes.setColumns(10);
-		textAmbientes.setBounds(87, 325, 64, 20);
+		textAmbientes.setBounds(428, 305, 68, 14);
 		panel.add(textAmbientes);
+		textAmbientes.setColumns(10);
 		
 		textMtsCubiertos = new JTextField();
 		textMtsCubiertos.setColumns(10);
-		textMtsCubiertos.setBounds(359, 325, 64, 20);
+		textMtsCubiertos.setBounds(428, 331, 68, 14);
 		panel.add(textMtsCubiertos);
 		
-		textMtsTotales = new JTextField();
-		textMtsTotales.setColumns(10);
-		textMtsTotales.setBounds(359, 356, 64, 20);
-		panel.add(textMtsTotales);
+		textMtsTotal = new JTextField();
+		textMtsTotal.setColumns(10);
+		textMtsTotal.setBounds(428, 356, 68, 14);
+		panel.add(textMtsTotal);
 		
-		JLabel lblBanios = new JLabel("Ba\u00F1os");
-		lblBanios.setBounds(253, 395, 84, 14);
-		panel.add(lblBanios);
+		textBaños = new JTextField();
+		textBaños.setColumns(10);
+		textBaños.setBounds(428, 377, 68, 14);
+		panel.add(textBaños);
 		
-		textBanios = new JTextField();
-		textBanios.setColumns(10);
-		textBanios.setBounds(359, 392, 64, 20);
-		panel.add(textBanios);
+		textHabitaciones = new JTextField();
+		textHabitaciones.setColumns(10);
+		textHabitaciones.setBounds(428, 409, 68, 14);
+		panel.add(textHabitaciones);
 		
-		JSeparator separator = new JSeparator();
-		separator.setBounds(10, 291, 499, 2);
-		panel.add(separator);
-		
-		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(10, 49, 499, 2);
-		panel.add(separator_1);
-	}
-
-	public JButton getBtnGuardar() {
-		return btnGuardar;
-	}
-
-	public JTextField getTxtApellidoPropietario() {
-		return txtApellidoPropietario;
-	}
-
-	public void setTxtApellidoPropietario(JTextField txtApellidoPropietario) {
-		this.txtApellidoPropietario = txtApellidoPropietario;
-	}
-
-	public JTextField getTxtNombrePropietario() {
-		return txtNombrePropietario;
-	}
-
-	public void setTxtNombrePropietario(JTextField txtNombrePropietario) {
-		this.txtNombrePropietario = txtNombrePropietario;
-	}
-
-	public JTextField getTxtDNIPropietario() {
-		return txtDNIPropietario;
-	}
-
-	public void setTxtDNIPropietario(JTextField txtDNIPropietario) {
-		this.txtDNIPropietario = txtDNIPropietario;
-	}
-
-	public JTextField getTxtCallePropietario() {
-		return txtCallePropietario;
-	}
-
-	public void setTxtCallePropietario(JTextField txtCallePropietario) {
-		this.txtCallePropietario = txtCallePropietario;
-	}
-
-	public JTextField getTxtTelefonoPropietario() {
-		return txtTelefonoPropietario;
-	}
-
-	public void setTxtTelefonoPropietario(JTextField txtTelefonoPropietario) {
-		this.txtTelefonoPropietario = txtTelefonoPropietario;
-	}
-
-	public JTextField getTxtEmailPropietario() {
-		return txtEmailPropietario;
-	}
-
-	public void setTxtEmailPropietario(JTextField txtEmailPropietario) {
-		this.txtEmailPropietario = txtEmailPropietario;
-	}
-
-	public JTextField getTxtHabitaciones() {
-		return txtHabitaciones;
-	}
-
-	public void setTxtHabitaciones(JTextField txtHabitaciones) {
-		this.txtHabitaciones = txtHabitaciones;
-	}
-
-	public JTextField getTxtAlturaPropietario() {
-		return txtAlturaPropietario;
-	}
-
-	public void setTxtAlturaPropietario(JTextField txtAlturaPropietario) {
-		this.txtAlturaPropietario = txtAlturaPropietario;
-	}
-
-	public JTextField getTxtLocalidadPropietario() {
-		return txtLocalidadPropietario;
-	}
-
-	public void setTxtLocalidadPropietario(JTextField txtLocalidadPropietario) {
-		this.txtLocalidadPropietario = txtLocalidadPropietario;
-	}
-
-	public JButton getBtnBuscarPropietario() {
-		return btnBuscarPropietario;
-	}
-
-	public void setBtnBuscarPropietario(JButton btnBuscarPropietario) {
-		this.btnBuscarPropietario = btnBuscarPropietario;
-	}
-
-	public JTextField getTextAmbientes() {
-		return textAmbientes;
-	}
-
-	public void setTextAmbientes(JTextField textAmbientes) {
-		this.textAmbientes = textAmbientes;
-	}
-
-	public JTextField getTextMtsCubiertos() {
-		return textMtsCubiertos;
-	}
-
-	public void setTextMtsCubiertos(JTextField textMtsCubiertos) {
-		this.textMtsCubiertos = textMtsCubiertos;
-	}
-
-	public JTextField getTextMtsTotales() {
-		return textMtsTotales;
-	}
-
-	public void setTextMtsTotales(JTextField textMtsTotales) {
-		this.textMtsTotales = textMtsTotales;
-	}
-
-	public JTextField getTextBanios() {
-		return textBanios;
-	}
-
-	public void setTextBanios(JTextField textBanios) {
-		this.textBanios = textBanios;
 	}
 	
+	public JButton getBtnAgregar() 
+	{
+		return btnAgregar;
+	}
+
+	public JButton getBtnBorrar() 
+	{
+		return btnBorrar;
+	}
 	
+	public JButton getBtnBuscar() 
+	{
+		return btnBuscar;
+	}
+	
+	public JButton getBtnEditar() 
+	{
+		return btnEditar;
+	}
 }
 
 

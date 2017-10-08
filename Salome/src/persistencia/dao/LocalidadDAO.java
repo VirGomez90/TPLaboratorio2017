@@ -11,8 +11,6 @@ import persistencia.conexion.Conexion;
 
 public class LocalidadDAO {
 
-
-	
 	private static final String selectAll = "SELECT * FROM Localidad";
 	private static final String insert = "INSERT INTO Localidad(localidad) VALUES(?)";
 	private static final String delete = "DELETE FROM Localidad WHERE localidad = ?";

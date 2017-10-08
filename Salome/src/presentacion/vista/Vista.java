@@ -60,7 +60,6 @@ public class Vista
 	private JScrollPane spContratos;
 	private JMenuItem mntmNuevoContrato;
 	private JMenuItem mntmConsultarContrato;
-	private JMenuItem mntmNuevoInteresado;
 	private JMenuItem mntmConsultarInteresados;
 	/**
 	 * @wbp.nonvisual location=-3,-31
@@ -140,9 +139,6 @@ public class Vista
 		
 		mnInteresados = new JMenu("Interesados");
 		menuBar.add(mnInteresados);
-		
-		mntmNuevoInteresado = new JMenuItem("Nuevo Interesado");
-		mnInteresados.add(mntmNuevoInteresado);
 		
 		mntmConsultarInteresados = new JMenuItem("Consultar Interesados");
 		mnInteresados.add(mntmConsultarInteresados);
@@ -393,13 +389,9 @@ public class Vista
 	public JMenuItem getMntmConsultarContrato() {
 		return mntmConsultarContrato;
 	}
-	public JMenuItem getMntmNuevoInteresado() {
-		return mntmNuevoInteresado;
-	}
 
 	public JMenuItem getMntmConsultarInteresados() {
 		return mntmConsultarInteresados;
 	}
-
 
 }
