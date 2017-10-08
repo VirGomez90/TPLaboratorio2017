@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 import presentacion.vista.VentanaContrato1;
 import presentacion.vista.VentanaContratoAlquiler;
 
-public class ControladorContrato implements ActionListener
+public class ControladorContratoAlquiler implements ActionListener
 {
 	//comentario de prueba
 	VentanaContrato1 vC;
 	VentanaContratoAlquiler ventanaContrato;
 	
-	public ControladorContrato ()
+	public ControladorContratoAlquiler ()
 	{
 		this.vC = new VentanaContrato1(this);
 		this.ventanaContrato = new VentanaContratoAlquiler(this);

@@ -3,10 +3,10 @@ package presentacion.controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import presentacion.vista.VistaInteresado;
 import presentacion.vista.VentanaContrato1;
 import presentacion.vista.VentanaContratoAlquiler;
 import presentacion.vista.VistaHome;
+import presentacion.vista.VistaInteresado;
 import presentacion.vista.VistaInteresadosAlta;
 
 public class ControladorHome implements ActionListener 

@@ -19,7 +19,7 @@ import java.awt.Label;
 import javax.swing.JMenuItem;
 
 
-public class Vista
+public class VistaHome
 {
 	//prueba
 	private JFrame frmInmobiliaria;
@@ -68,7 +68,7 @@ public class Vista
 	 */
 	
 
-	public Vista() 
+	public VistaHome() 
 	{
 		super();
 		initialize();

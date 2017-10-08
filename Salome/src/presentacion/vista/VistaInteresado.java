@@ -19,7 +19,7 @@ import javax.swing.JTable;
 import javax.swing.JComboBox;
 
 
-public class Interesados extends JFrame {
+public class VistaInteresado extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -39,7 +39,7 @@ public class Interesados extends JFrame {
 	
 	private JComboBox<String> cmboxTipoInmueble;
 	
-	public Interesados(ControladorInteresado controladorInteresado) 
+	public VistaInteresado(ControladorInteresado controladorInteresado) 
 	{
 		setTitle("Menu Interesados");
 		setBounds(100, 100, 601, 698);
