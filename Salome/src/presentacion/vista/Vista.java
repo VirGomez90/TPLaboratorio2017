@@ -58,8 +58,8 @@ public class Vista
 	JButton btnVer;
 	private JPanel panelContratos;
 	private JScrollPane spContratos;
-	private JMenuItem mntmNuevoContrato;
-	private JMenuItem mntmConsultarContrato;
+	private JMenuItem mntmContratoAlquiler;
+	private JMenuItem mntmContratosCompraVenta;
 	private JMenuItem mntmConsultarInteresados;
 	/**
 	 * @wbp.nonvisual location=-3,-31
@@ -122,11 +122,11 @@ public class Vista
 		mnContratos = new JMenu("Contratos");
 		menuBar.add(mnContratos);
 		
-		mntmNuevoContrato = new JMenuItem("Nuevo Contrato");
-		mnContratos.add(mntmNuevoContrato);
+		mntmContratoAlquiler = new JMenuItem("Contratos de Alquileres");
+		mnContratos.add(mntmContratoAlquiler);
 		
-		mntmConsultarContrato = new JMenuItem("Consultar Contratos");
-		mnContratos.add(mntmConsultarContrato);
+		mntmContratosCompraVenta = new JMenuItem("Contratos de Compra/Venta");
+		mnContratos.add(mntmContratosCompraVenta);
 		
 		mnInmobiliariasColegas = new JMenu("Inmobiliarias Colegas");
 		menuBar.add(mnInmobiliariasColegas);
@@ -382,12 +382,12 @@ public class Vista
 	}
 
 	
-	public JMenuItem getMntmNuevoContrato() {
-		return mntmNuevoContrato;
+	public JMenuItem getMntmContratoAlquiler() {
+		return mntmContratoAlquiler;
 	}
 
 	public JMenuItem getMntmConsultarContrato() {
-		return mntmConsultarContrato;
+		return mntmContratosCompraVenta;
 	}
 
 	public JMenuItem getMntmConsultarInteresados() {

@@ -1,21 +1,23 @@
 package presentacion.vista;
 
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import java.awt.Color;
-import javax.swing.JLabel;
-import java.awt.Font;
+
 import com.toedter.calendar.JDateChooser;
 
 import presentacion.controlador.ControladorContrato;
 
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-
-public class ContratoAlquiler extends JFrame {
+public class ContratoCompraVenta extends JFrame {
 
 	/**
 	 * 
@@ -43,15 +45,16 @@ public class ContratoAlquiler extends JFrame {
 	
 	
 	private JButton btnGuardar;
-	private JButton btnBuscarPropietario;
+	private JButton btnBuscarVendedor;
 	private JButton btnBuscarInquilino;
 
 	ControladorContrato controlador;
+	private JTextField txtComision;
 	
 
-	public ContratoAlquiler(ControladorContrato controlador) 
+	public ContratoCompraVenta(ControladorContrato controlador) 
 	{
-		setTitle("Contrato de Alquiler");
+		setTitle("Contrato de Compra/Venta");
 		setBounds(100, 100, 601, 698);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -65,7 +68,7 @@ public class ContratoAlquiler extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblDatos = new JLabel("Datos del Propietario:");
+		JLabel lblDatos = new JLabel("Datos del Vendedor:");
 		lblDatos.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblDatos.setBounds(10, 0, 164, 25);
 		panel.add(lblDatos);
@@ -91,31 +94,23 @@ public class ContratoAlquiler extends JFrame {
 		panel.add(lblEmail);
 		
 		JLabel lblInmueble = new JLabel("Inmueble");
-		lblInmueble.setBounds(10, 452, 70, 14);
+		lblInmueble.setBounds(10, 493, 70, 14);
 		panel.add(lblInmueble);
 		
 		JLabel lblFechaInicio = new JLabel("Fecha Inicio");
-		lblFechaInicio.setBounds(10, 494, 84, 14);
+		lblFechaInicio.setBounds(10, 452, 84, 14);
 		panel.add(lblFechaInicio);
 		
 		JDateChooser dChFechaInicio = new JDateChooser();
-		dChFechaInicio.setBounds(77, 488, 97, 20);
+		dChFechaInicio.setBounds(117, 452, 97, 20);
 		panel.add(dChFechaInicio);
 		
-		JLabel lblFechaFin = new JLabel("Fecha Fin");
-		lblFechaFin.setBounds(195, 494, 64, 14);
-		panel.add(lblFechaFin);
-		
-		JDateChooser dChFechaFin = new JDateChooser();
-		dChFechaFin.setBounds(262, 488, 97, 20);
-		panel.add(dChFechaFin);
-		
 		JLabel lblMonto = new JLabel("Monto");
-		lblMonto.setBounds(10, 525, 64, 14);
+		lblMonto.setBounds(317, 452, 64, 14);
 		panel.add(lblMonto);
 		
 		JLabel lblCargarArchivo = new JLabel("Cargar archivo");
-		lblCargarArchivo.setBounds(10, 571, 84, 14);
+		lblCargarArchivo.setBounds(10, 538, 84, 14);
 		panel.add(lblCargarArchivo);
 		
 		txtApellidoPropietario = new JTextField();
@@ -144,12 +139,12 @@ public class ContratoAlquiler extends JFrame {
 		panel.add(txtEmailPropietario);
 		
 		JComboBox<String> cmbxInmuebles = new JComboBox<String>();
-		cmbxInmuebles.setBounds(77, 449, 191, 20);
+		cmbxInmuebles.setBounds(117, 490, 149, 20);
 		panel.add(cmbxInmuebles);
 		
 		txtMonto = new JTextField();
 		txtMonto.setColumns(10);
-		txtMonto.setBounds(77, 522, 84, 20);
+		txtMonto.setBounds(370, 449, 84, 20);
 		panel.add(txtMonto);
 		
 		
@@ -159,10 +154,14 @@ public class ContratoAlquiler extends JFrame {
 		panel.add(btnGuardar);
 		
 	
-		btnBuscarPropietario = new JButton("...");
-		btnBuscarPropietario.setBounds(250, 32, 41, 23);
-		panel.add(btnBuscarPropietario);
-		btnBuscarPropietario.addActionListener(controlador);
+		btnBuscarVendedor = new JButton("");
+		btnBuscarVendedor.setToolTipText("Buscar");
+		btnBuscarVendedor.setIcon(new ImageIcon(ContratoCompraVenta.class.getResource("/im\u00E1genes/lupa.jpg")));
+		btnBuscarVendedor.setFont(new Font("Tahoma", Font.PLAIN, 5));
+		btnBuscarVendedor.setSelectedIcon(null);
+		btnBuscarVendedor.setBounds(250, 32, 26, 23);
+		panel.add(btnBuscarVendedor);
+		btnBuscarVendedor.addActionListener(controlador);
 		
 		JLabel lblCalle = new JLabel("Calle");
 		lblCalle.setBounds(10, 103, 64, 14);
@@ -191,7 +190,7 @@ public class ContratoAlquiler extends JFrame {
 		txtLocalidadPropietario.setBounds(77, 136, 137, 20);
 		panel.add(txtLocalidadPropietario);
 		
-		JLabel lblDatosDelInquilino = new JLabel("Datos del Inquilino:");
+		JLabel lblDatosDelInquilino = new JLabel("Datos del Comprador:");
 		lblDatosDelInquilino.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblDatosDelInquilino.setBounds(10, 210, 164, 25);
 		panel.add(lblDatosDelInquilino);
@@ -273,31 +272,26 @@ public class ContratoAlquiler extends JFrame {
 		lblInmueble_1.setBounds(10, 410, 164, 25);
 		panel.add(lblInmueble_1);
 		
-		JLabel lblActualizacin = new JLabel("Actualizaci\u00F3n");
-		lblActualizacin.setBounds(195, 528, 64, 14);
-		panel.add(lblActualizacin);
-		
-		JLabel lblTipo = new JLabel("Tipo");
-		lblTipo.setBounds(319, 452, 56, 14);
-		panel.add(lblTipo);
-		
-		JComboBox<String> cmbxTipoAlquiler = new JComboBox<String>();
-		cmbxTipoAlquiler.setBounds(357, 449, 97, 20);
-		panel.add(cmbxTipoAlquiler);
-		
-		btnBuscarInquilino = new JButton("...");
-		btnBuscarInquilino.setBounds(253, 242, 41, 23);
+		btnBuscarInquilino = new JButton("");
+		btnBuscarInquilino.setToolTipText("Buscar");
+		btnBuscarInquilino.setIcon(new ImageIcon(ContratoCompraVenta.class.getResource("/im\u00E1genes/lupa.jpg")));
+		btnBuscarInquilino.setBounds(253, 242, 23, 23);
 		panel.add(btnBuscarInquilino);
 		btnBuscarInquilino.addActionListener(controlador);
 		
-		JComboBox<String> cmbxActualizacion = new JComboBox<String>();
-		cmbxActualizacion.setBounds(264, 525, 95, 20);
-		panel.add(cmbxActualizacion);
-		
 		txtCargarArchivo = new JTextField();
 		txtCargarArchivo.setColumns(10);
-		txtCargarArchivo.setBounds(104, 568, 255, 20);
+		txtCargarArchivo.setBounds(117, 535, 255, 20);
 		panel.add(txtCargarArchivo);
+		
+		JLabel lblComision = new JLabel("Comisi\u00F3n");
+		lblComision.setBounds(317, 493, 64, 14);
+		panel.add(lblComision);
+		
+		txtComision = new JTextField();
+		txtComision.setColumns(10);
+		txtComision.setBounds(370, 490, 84, 20);
+		panel.add(txtComision);
 	}
 
 	public JButton getBtnGuardar() {
@@ -305,7 +299,7 @@ public class ContratoAlquiler extends JFrame {
 	}
 
 	public JButton getBtnBuscarPropietario() {
-		return btnBuscarPropietario;
+		return btnBuscarVendedor;
 	}
 
 	public JButton getBtnBuscarInquilino() {
@@ -455,6 +449,6 @@ public class ContratoAlquiler extends JFrame {
 	public void setTxtCargarArchivo(JTextField txtCargarArchivo) {
 		this.txtCargarArchivo = txtCargarArchivo;
 	}
-
-
+	
+	
 }

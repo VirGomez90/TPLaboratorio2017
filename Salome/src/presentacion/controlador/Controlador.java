@@ -3,8 +3,9 @@ package presentacion.controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import presentacion.vista.ContratoAlquiler;
 import presentacion.vista.Interesados;
+import presentacion.vista.VentanaContrato1;
+import presentacion.vista.VentanaContratoAlquiler;
 import presentacion.vista.Vista;
 import presentacion.vista.VistaInteresadosAlta;
 
@@ -12,7 +13,9 @@ public class Controlador implements ActionListener
 {
 
 	Vista vista;
-	ContratoAlquiler ventanaContrato;
+	VentanaContratoAlquiler ventanaContrato;
+	VentanaContrato1 vC;
+	
 	Interesados ventanaInteresados;
 	VistaInteresadosAlta ventanaAltaInteresados; 
 	
@@ -25,7 +28,7 @@ public class Controlador implements ActionListener
 		this.vista.getBtnBuscar().addActionListener(this);
 		this.vista.getBtnVer().addActionListener(this);
 		this.vista.getMnContratos().addActionListener(this);
-		this.vista.getMntmNuevoContrato().addActionListener(this);
+		this.vista.getMntmContratoAlquiler().addActionListener(this);
 		this.vista.getMntmConsultarContrato().addActionListener(this);
 		this.vista.getMnInteresados().addActionListener(this);
 		this.vista.getMntmConsultarInteresados().addActionListener(this);
@@ -49,10 +52,10 @@ public class Controlador implements ActionListener
 	
 	public void actionPerformed(ActionEvent e) 
 	{
-		if (e.getSource() == this.vista.getMntmNuevoContrato())
+		if (e.getSource() == this.vista.getMntmContratoAlquiler())
 		{
 			controladorContrato = new ControladorContrato();
-			this.ventanaContrato = new ContratoAlquiler(controladorContrato);
+			this.vC = new VentanaContrato1(controladorContrato);
 			this.controladorContrato.inicialize();
 			
 		}
