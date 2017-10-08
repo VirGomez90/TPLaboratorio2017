@@ -4,11 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import presentacion.vista.Interesados;
-import presentacion.vista.VistaAltaInteresados;
+
+import presentacion.vista.VistaInteresadosAlta;
 
 public class ControladorInteresado implements ActionListener{ 
 	Interesados ventanaInteresado;
-	VistaAltaInteresados ventanaAltaInteresados;
+	VistaInteresadosAlta ventanaAltaInteresados;
 	
 	public ControladorInteresado(){
 		this.ventanaInteresado = new Interesados(this);
@@ -31,7 +32,7 @@ public class ControladorInteresado implements ActionListener{
 
 		if (e.getSource() == this.ventanaInteresado.getBtnAgregar())
 		{
-			this.ventanaAltaInteresados = new VistaAltaInteresados(this);
+			this.ventanaAltaInteresados = new VistaInteresadosAlta(this);
 		}
 	
 		//me traigo los campos, modifico y guardo

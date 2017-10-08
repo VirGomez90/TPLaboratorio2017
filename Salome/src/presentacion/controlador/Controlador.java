@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import presentacion.vista.ContratoAlquiler;
 import presentacion.vista.Interesados;
 import presentacion.vista.Vista;
-import presentacion.vista.VistaAltaInteresados;
+import presentacion.vista.VistaInteresadosAlta;
 
 public class Controlador implements ActionListener 
 {
@@ -14,7 +14,7 @@ public class Controlador implements ActionListener
 	Vista vista;
 	ContratoAlquiler ventanaContrato;
 	Interesados ventanaInteresados;
-	VistaAltaInteresados ventanaAltaInteresados; 
+	VistaInteresadosAlta ventanaAltaInteresados; 
 	
 	ControladorContrato controladorContrato;
 	ControladorInteresado controladorInteresados;
