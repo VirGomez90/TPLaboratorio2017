@@ -127,6 +127,7 @@ CREATE TABLE `ContratoAlquiler` (
 `porcentajeComision` INT(8) NOT NULL,
 `tipoContrato` VARCHAR(15) NOT NULL,
 `escribania` INT(15) ,
+`monto` INT(15) ,
 PRIMARY KEY (`idContrato`));
 alter table `ContratoAlquiler` add foreign key (`duenio`) references `Persona` (`dni`) on update cascade;
 alter table `ContratoAlquiler` add foreign key (`inquilino`) references `Persona` (`dni`) on update cascade;
