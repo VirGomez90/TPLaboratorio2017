@@ -51,6 +51,7 @@ public class VentanaContratoAlquiler extends JFrame {
 
 	public VentanaContratoAlquiler(ControladorContrato controlador) 
 	{
+		//prueba
 		setTitle("Contrato de Alquiler");
 		setBounds(100, 100, 601, 698);
 		contentPane = new JPanel();

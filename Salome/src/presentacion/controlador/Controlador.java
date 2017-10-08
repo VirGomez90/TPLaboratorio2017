@@ -11,7 +11,7 @@ import presentacion.vista.VistaInteresadosAlta;
 
 public class Controlador implements ActionListener 
 {
-
+//comentario de prueba
 	Vista vista;
 	VentanaContratoAlquiler ventanaContrato;
 	VentanaContrato1 vC;

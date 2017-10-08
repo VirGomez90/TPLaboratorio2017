@@ -54,6 +54,7 @@ public class ContratoCompraVenta extends JFrame {
 
 	public ContratoCompraVenta(ControladorContrato controlador) 
 	{
+		//comentario de prueba
 		setTitle("Contrato de Compra/Venta");
 		setBounds(100, 100, 601, 698);
 		contentPane = new JPanel();

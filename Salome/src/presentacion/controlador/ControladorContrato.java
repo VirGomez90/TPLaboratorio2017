@@ -8,6 +8,7 @@ import presentacion.vista.VentanaContratoAlquiler;
 
 public class ControladorContrato implements ActionListener
 {
+	//comentario de prueba
 	VentanaContrato1 vC;
 	VentanaContratoAlquiler ventanaContrato;
 	

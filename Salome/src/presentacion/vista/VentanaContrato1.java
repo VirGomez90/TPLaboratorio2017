@@ -40,6 +40,7 @@ public class VentanaContrato1 extends JFrame {
 	
 	public VentanaContrato1(ControladorContrato controlador) 
 	{
+		//comentario
 		setTitle("Contratos");
 		setBounds(100, 100, 647, 504);
 		contentPane = new JPanel();

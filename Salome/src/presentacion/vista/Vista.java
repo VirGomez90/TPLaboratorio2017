@@ -21,6 +21,7 @@ import javax.swing.JMenuItem;
 
 public class Vista
 {
+	//prueba
 	private JFrame frmInmobiliaria;
 	private Tabla tablaNotificaciones;
 	private Tabla tablaContratos;
