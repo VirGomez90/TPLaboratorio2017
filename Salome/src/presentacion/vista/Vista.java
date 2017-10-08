@@ -60,6 +60,7 @@ public class Vista
 	private JPanel panelContratos;
 	private JScrollPane spContratos;
 	private JMenuItem mntmContratoAlquiler;
+	private JMenuItem mntmPago;
 	private JMenuItem mntmContratosCompraVenta;
 	private JMenuItem mntmConsultarInteresados;
 	/**
@@ -117,20 +118,26 @@ public class Vista
 		mnBoletosCompraventa = new JMenu("Boletos Compra/Venta");
 		menuBar.add(mnBoletosCompraventa);
 		
+		mnInteresados = new JMenu("Interesados");
+		menuBar.add(mnInteresados);
+		
+		mntmConsultarInteresados = new JMenuItem("Consultar Interesados");
+		mnInteresados.add(mntmConsultarInteresados);
+		
 		mnCitas = new JMenu("Citas");
 		menuBar.add(mnCitas);
+		
+		mnInmobiliariasColegas = new JMenu("Inmobiliarias Colegas");
+		menuBar.add(mnInmobiliariasColegas);
 		
 		mnContratos = new JMenu("Contratos");
 		menuBar.add(mnContratos);
 		
-		mntmContratoAlquiler = new JMenuItem("Contratos de Alquileres");
-		mnContratos.add(mntmContratoAlquiler);
+		mnPagos = new JMenu("Pagos");
+		menuBar.add(mnPagos);
 		
-		mntmContratosCompraVenta = new JMenuItem("Contratos de Compra/Venta");
-		mnContratos.add(mntmContratosCompraVenta);
-		
-		mnInmobiliariasColegas = new JMenu("Inmobiliarias Colegas");
-		menuBar.add(mnInmobiliariasColegas);
+		mnCobros = new JMenu("Cobros");
+		menuBar.add(mnCobros);
 		
 		mnCartelesInmobiliarios = new JMenu("Carteles Inmobiliarios");
 		menuBar.add(mnCartelesInmobiliarios);
@@ -138,20 +145,17 @@ public class Vista
 		mnReportes = new JMenu("Reportes");
 		menuBar.add(mnReportes);
 		
-		mnInteresados = new JMenu("Interesados");
-		menuBar.add(mnInteresados);
-		
-		mntmConsultarInteresados = new JMenuItem("Consultar Interesados");
-		mnInteresados.add(mntmConsultarInteresados);
-		
 		mnCalificaciones = new JMenu("Calificaciones");
 		menuBar.add(mnCalificaciones);
 		
-		mnPagos = new JMenu("Pagos");
-		menuBar.add(mnPagos);
+		mntmContratoAlquiler = new JMenuItem("Contratos de Alquileres");
+		mnContratos.add(mntmContratoAlquiler);
 		
-		mnCobros = new JMenu("Cobros");
-		menuBar.add(mnCobros);
+		mntmPago = new JMenuItem("Pago de alquiler a dueño");
+		mnPagos.add(mntmPago);
+		
+		mntmContratosCompraVenta = new JMenuItem("Contratos de Compra/Venta");
+		mnContratos.add(mntmContratosCompraVenta);
 		
 		mnBackup = new JMenu("Back-up");
 		menuBar.add(mnBackup);
@@ -386,6 +390,11 @@ public class Vista
 	public JMenuItem getMntmContratoAlquiler() {
 		return mntmContratoAlquiler;
 	}
+	
+	public JMenuItem getMntmPago() {
+		return mntmContratoAlquiler;
+	}
+	
 
 	public JMenuItem getMntmConsultarContrato() {
 		return mntmContratosCompraVenta;
