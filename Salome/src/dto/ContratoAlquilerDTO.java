@@ -15,6 +15,7 @@ public class ContratoAlquilerDTO {
 	private int porcentajeComision;
 	private String tipoContrato;
 	private int escribania;
+	private int monto;
 	
 	public ContratoAlquilerDTO(
 		int idContrato,
@@ -27,7 +28,8 @@ public class ContratoAlquilerDTO {
 		int porcentajeIncremento,
 		int porcentajeComision,
 		String tipoContrato,
-		int escribania)
+		int escribania,
+		int monto)
 	{
 		this.idContrato = idContrato;
 		this.duenio = duenio;
@@ -40,6 +42,7 @@ public class ContratoAlquilerDTO {
 		this.porcentajeComision =  porcentajeComision;
 		this.tipoContrato = tipoContrato;
 		this.escribania = escribania;
+		this.monto = monto;
 		
 	}
 	
@@ -110,4 +113,11 @@ public class ContratoAlquilerDTO {
 		this.escribania = escribania;
 	}
 
+	public int getMonto() {
+		return monto;
+	}
+
+	public void setMonto(int monto) {
+		this.monto = monto;
+	}
 }

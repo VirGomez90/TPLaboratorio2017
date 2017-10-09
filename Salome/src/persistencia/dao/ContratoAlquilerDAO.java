@@ -12,9 +12,9 @@ import persistencia.conexion.Conexion;
 public class ContratoAlquilerDAO {
 
 	private static final String selectAll = "SELECT * FROM ContratoAlquiler";
-	private static final String insert = "INSERT INTO ContratoAlquiler(idContrato, duenio, inquilino, fechaInicio, fechaFin, idInmueble, incremento, porcentajeIncremento, porcentajeComision, tipoContrato, escribania) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+	private static final String insert = "INSERT INTO ContratoAlquiler(idContrato, duenio, inquilino, fechaInicio, fechaFin, idInmueble, incremento, porcentajeIncremento, porcentajeComision, tipoContrato, escribania, monto) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )";
 	private static final String delete = "DELETE FROM ContratoAlquiler WHERE idContrato = ?";
-	private static final String update = "UPDATE ContratoAlquiler SET idContrato= ? duenio= ? inquilino= ? fechaInicio= ? fechaFin= ? idInmueble= ? incremento= ? porcentajeIncremento= ? porcentajeComision= ? tipoContrato= ? escribania WHERE idContrato= ?";
+	private static final String update = "UPDATE ContratoAlquiler SET idContrato= ? duenio= ? inquilino= ? fechaInicio= ? fechaFin= ? idInmueble= ? incremento= ? porcentajeIncremento= ? porcentajeComision= ? tipoContrato= ? monto= ? escribania WHERE idContrato= ?";
 	private static final String selectById = "SELECT * FROM ContratoAlquiler WHERE idContrato = ?";
 	private static final Conexion conexion = Conexion.getConexion();
 	
@@ -41,7 +41,8 @@ public class ContratoAlquilerDAO {
 						resultSet.getInt("porcentajeIncremento"),
 						resultSet.getInt("porcentajeComision"),
 						resultSet.getString("tipoContrato"),
-						resultSet.getInt("escribania")
+						resultSet.getInt("escribania"),
+						resultSet.getInt("monto")
 						));
 			}
 		} 
@@ -72,6 +73,8 @@ public class ContratoAlquilerDAO {
 			statement.setInt(9, contrato.getPorcentajeComision());			
 			statement.setString(10, contrato.getTipoContrato());
 			statement.setInt(11, contrato.getEscribania());
+			statement.setInt(12, contrato.getMonto());
+			
 			if(statement.executeUpdate() > 0) //Si se ejecuta devuelvo true
 				return true;
 		} 
@@ -103,7 +106,8 @@ public class ContratoAlquilerDAO {
 			statement.setInt(9, contrato.getPorcentajeComision());			
 			statement.setString(10, contrato.getTipoContrato());
 			statement.setInt(11, contrato.getEscribania());
-			statement.setInt(12, contratoUpdate);
+			statement.setInt(12, contrato.getMonto());
+			statement.setInt(13, contratoUpdate);
 			if(statement.executeUpdate() > 0) 
 				return true;
 		} 

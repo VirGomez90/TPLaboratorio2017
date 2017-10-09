@@ -14,19 +14,11 @@ public class Conexion {
 	private boolean open;
 	
 	
-	
-	/**
-	 * ctor
-	 * @param
-	 * */
 	public Conexion() {
 				
 		try {
-			
-			ConfiguracionDAO configdelsystema = new ConfiguracionDAO();
-			ConfiguracionDTO config = configdelsystema.obtenerConfiguracion("config.ini");
-						
-			conexion = DriverManager.getConnection("jdbc:mysql://" + config.getIp() + ":" + config.getPuerto() +"/"+config.getNombrebasedatos(), config.getUsuario(), config.getPassword());	
+							
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/salome", "root", "root");	
 			System.out.println("Conexion exitosa");
 			setOpen(true);
 	
