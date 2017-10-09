@@ -16,8 +16,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JSeparator;
 
 public class VistaInteresadosAlta extends JFrame {
-	// calse de mierda subite
-	//holllllllllaaaaaaa
+	// 
+	//
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPanel;
 	private JTextField txtApellidoPropietario;
