@@ -55,7 +55,7 @@ CREATE TABLE `Inmueble` (
 `altura` VARCHAR(8) NOT NULL,
 `depto` VARCHAR(8) NOT NULL,
 `localidad` VARCHAR(20) NOT NULL,
-`duenio` VARCHAR(45) ,
+`duenio` INT(10) ,
 `inmoColega` VARCHAR(45) ,
 `cartel` VARCHAR(20) ,
 `precio` INT(20) ,
@@ -77,6 +77,7 @@ CREATE TABLE `Inmueble` (
 `tipo` VARCHAR(20) ,
 PRIMARY KEY (`idInmueble`));
 alter table `Inmueble` add foreign key (`localidad`) references `Localidad` (`localidad`) on update cascade;
+alter table `Inmueble` add foreign key (`duenio`) references `Persona` (`dni`) on update cascade;
 
 CREATE TABLE `InmuebleImagen` (
 `idImagen` INT(20) NOT NULL AUTO_INCREMENT,
